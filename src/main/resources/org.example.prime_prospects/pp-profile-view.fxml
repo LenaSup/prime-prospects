@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<?import javafx.scene.chart.NumberAxis?>
+<?import com.sun.javafx.scene.control.IntegerField?>
+<?import javafx.collections.FXCollections?>
+<?import java.lang.String?>
+<BorderPane prefHeight="600.0"
+            prefWidth="800.0"
+            xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="org.example.prime_prospects.contrallers.ProfileController">
+
+
+    <right>
+        <VBox fx:id="rightList" prefWidth="100.0" style="-fx-background-color: lightgray;" BorderPane.alignment="CENTER">
+            <children>
+                <Hyperlink text="Вернуться" textFill="DODGERBLUE" onAction="#backClick">
+                    <font>
+                        <Font size="13.0" />
+                    </font>
+                    <padding>
+                        <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+                    </padding>
+                </Hyperlink>
+                <Hyperlink text="Мои отклики" textFill="DODGERBLUE">
+                    <font>
+                        <Font size="13.0" />
+                    </font>
+                    <padding>
+                        <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+                    </padding>
+                </Hyperlink>
+                <Hyperlink text="Предложения" textFill="DODGERBLUE">
+                    <font>
+                        <Font size="13.0" />
+                    </font>
+                    <padding>
+                        <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+                    </padding>
+                </Hyperlink>
+            </children>
+        </VBox>
+    </right>
+
+    <center>
+        <VBox spacing="10.0" BorderPane.alignment="CENTER" fx:id="main" minHeight="-Infinity">
+            <padding>
+                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+            </padding>
+            <children>
+                <Label alignment="CENTER" maxWidth="1.7976931348623157E308"
+                       fx:id="nameLabel"
+                       HBox.hgrow="ALWAYS">
+                    <font>
+                        <Font size="24.0" />
+                    </font>
+                    <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                    </padding>
+                </Label>
+
+                <HBox>
+                    <children>
+                        <Label text="Дата регистрации:  " />
+                        <Label fx:id="dateLabel"/>
+                    </children>
+                </HBox>
+
+                <HBox>
+                    <children>
+                        <Label text="Номер телифона:    " />
+                        <TextField fx:id="numberLabel"/>
+                    </children>
+                </HBox>
+
+                <HBox>
+                    <children>
+                        <Label text="Email: " />
+                        <TextField fx:id="emileLabel"/>
+                    </children>
+                </HBox>
+
+                <HBox>
+                    <children>
+                        <Label text="Город: " />
+                        <TextField fx:id="citeLabel"/>
+                    </children>
+                </HBox>
+
+                <HBox fx:id="sikret">
+                    <children>
+                        <Label text="Описание: " />
+                        <TextArea fx:id="descriptionLabel" wrapText="true" prefHeight="120.0"/>
+                    </children>
+                </HBox>
+
+                <Button style="-fx-background-color: #cee0f2;" mnemonicParsing="false" text="Редактор"
+                        onAction="#editClick"/>
+                <HBox spacing="5">
+                    <Button style="-fx-background-color: #e3e3e3;" mnemonicParsing="false" text="Добавить"
+                            onAction="#newClick"/>
+                    <Button style="-fx-background-color: #e3e3e3;" mnemonicParsing="false" text="->"
+                            onAction="#nextClick"/>
+                </HBox>
+                <VBox fx:id="all" spacing="10.0" maxHeight="280">
+                    <children>
+
+                    </children>
+                </VBox>
+
+            </children>
+
+        </VBox>
+
+
+    </center>
+
+    <top>
+        <HBox alignment="CENTER_RIGHT" BorderPane.alignment="CENTER" style="-fx-background-color: red">
+            <children>
+                <Label alignment="CENTER" maxWidth="1.7976931348623157E308"
+                       style="-fx-background-color: red;" text="Prime Prospects"
+                       textFill="WHITE" HBox.hgrow="ALWAYS">
+                    <font>
+                        <Font size="24.0" />
+                    </font>
+                    <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                    </padding>
+                </Label>
+                <Button style="-fx-background-color: red; -fx-border-width: 0;
+                -fx-padding: 0; -fx-text-fill: black; -fx-cursor: hand;" mnemonicParsing="false" text="Log out"
+                        onAction="#logOutClick">
+                    <HBox.margin >
+                        <Insets  right="5.0" />
+                    </HBox.margin>
+                </Button>
+            </children>
+        </HBox>
+    </top>
+</BorderPane>

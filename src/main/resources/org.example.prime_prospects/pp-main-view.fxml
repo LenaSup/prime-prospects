@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<?import javafx.scene.chart.NumberAxis?>
+<?import com.sun.javafx.scene.control.IntegerField?>
+<?import javafx.collections.FXCollections?>
+<?import java.lang.String?>
+<BorderPane prefHeight="600.0"
+            prefWidth="800.0"
+            xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="org.example.prime_prospects.contrallers.MainContraller">
+
+
+    <left>
+        <VBox fx:id="leftList" prefWidth="120.0" style="-fx-background-color: lightgray;" BorderPane.alignment="CENTER">
+            <children>
+                <Hyperlink text="Личный кабинет" textFill="DODGERBLUE" onAction="#profileClick">
+                    <font>
+                        <Font size="13.0" />
+                    </font>
+                    <padding>
+                        <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+                    </padding>
+                </Hyperlink>
+            </children>
+
+        </VBox>
+    </left>
+
+    <right>
+        <VBox prefWidth="100.0" style="-fx-background-color: lightgray;" BorderPane.alignment="CENTER">
+
+        </VBox>
+    </right>
+
+    <center>
+        <VBox spacing="10.0" BorderPane.alignment="CENTER">
+            <padding>
+                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+            </padding>
+            <children>
+
+                <HBox spacing="10.0">
+                    <children>
+                        <TextField fx:id="mainSerch" promptText="Название вакансии" HBox.hgrow="ALWAYS" />
+                        <Button style="-fx-background-color: #1E90FF" mnemonicParsing="false" text="Поиск"
+                                onAction="#searchClick"/>
+                    </children>
+                </HBox>
+
+                <VBox spacing="5.0" style="-fx-background-color: #cee0f2; -fx-text-fill: #707070" fx:id="filters">
+                    <children>
+
+                        <HBox>
+                            <children>
+                                <Label text="Зарплата:" />
+                                <TextField fx:id="selariFilter"/>
+                            </children>
+                        </HBox>
+                        <HBox>
+                            <children>
+                                <Label text="Опыт работы:" />
+                                <TextField fx:id="levalFilter"/>
+                            </children>
+                        </HBox>
+                        <HBox>
+                            <children>
+                                <Label text="Горад:"  />
+                                <TextField fx:id="syteFilter"/>
+                            </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" spacing="10.0">
+                            <children>
+                                <Label text="Рабочий день:" />
+                                <Slider fx:id="workDayFilter" max="24" min="2" showTickLabels="true"
+                                        majorTickUnit="4" value="8"/>
+                            </children>
+                        </HBox>
+                        <CheckBox text="Трудовой догавор" fx:id="checkFilter1"/>
+                        <CheckBox text="Стажировка"  fx:id="checkFilter2"/>
+
+                        <HBox>
+                            <children>
+                                <Label text="Тип рабочей недели:" />
+                                <ChoiceBox fx:id="WorkWickFilter" prefWidth="150.0">
+                                    <items>
+                                        <FXCollections fx:factory="observableArrayList">
+                                            <String fx:value="5/2" />
+                                            <String fx:value="4/3" />
+                                            <String fx:value="2/2" />
+                                            <String fx:value="Плавающее" />
+                                        </FXCollections>
+                                    </items>
+                                </ChoiceBox>
+                            </children>
+                        </HBox>
+                </children>
+            </VBox>
+            <Button style="-fx-background-color: #1E90FF;" mnemonicParsing="false" text="Применить фильтры"
+            onAction="#filtersClick"/>
+
+
+            <VBox fx:id="vacancy" spacing="10.0">
+                    <children>
+                    </children>
+            </VBox>
+            </children>
+        </VBox>
+    </center>
+
+    <top>
+        <HBox alignment="CENTER_RIGHT" BorderPane.alignment="CENTER" style="-fx-background-color: red">
+            <children>
+                <Label alignment="CENTER" maxWidth="1.7976931348623157E308"
+                       style="-fx-background-color: red;" text="Prime Prospects"
+                       textFill="WHITE" HBox.hgrow="ALWAYS">
+                    <font>
+                        <Font size="24.0" />
+                    </font>
+                    <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                    </padding>
+                </Label>
+                <Button style="-fx-background-color: red; -fx-border-width: 0;
+                -fx-padding: 0; -fx-text-fill: black; -fx-cursor: hand;" mnemonicParsing="false" text="Log out"
+                onAction="#logOutClick">
+                    <HBox.margin >
+                        <Insets  right="5.0" />
+                    </HBox.margin>
+                </Button>
+            </children>
+        </HBox>
+    </top>
+</BorderPane>

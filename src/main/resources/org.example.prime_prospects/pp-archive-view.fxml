@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<?import javafx.scene.chart.NumberAxis?>
+<?import com.sun.javafx.scene.control.IntegerField?>
+<?import javafx.collections.FXCollections?>
+<?import java.lang.String?>
+<BorderPane prefHeight="600.0"
+            prefWidth="800.0"
+            xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="org.example.prime_prospects.contrallers.ArchiveController">
+
+    <top>
+        <HBox BorderPane.alignment="CENTER" prefHeight="20.0" style="-fx-background-color: red">
+            <children>
+                <Button style="-fx-background-color: red; -fx-border-width: 0;
+                -fx-padding: 0; -fx-text-fill: white; -fx-cursor: hand;" text="Вернуться"
+                        onAction="#backClick">
+                    <HBox.margin>
+                        <Insets right="5.0"/>
+                    </HBox.margin>
+                </Button>
+            </children>
+        </HBox>
+    </top>
+
+    <center>
+        <VBox alignment="CENTER" spacing="20.0" fx:id="mainVB">
+            <children>
+            </children>
+        </VBox>
+    </center>
+</BorderPane>

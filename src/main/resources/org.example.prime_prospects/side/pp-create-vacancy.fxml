@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<?import javafx.collections.FXCollections?>
+<?import java.lang.String?>
+<BorderPane prefHeight="600.0" prefWidth="800.0"
+            xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="org.example.prime_prospects.contrallers.CreateVacansyController">
+
+    <top>
+        <HBox alignment="CENTER_RIGHT" BorderPane.alignment="CENTER" style="-fx-background-color: red">
+            <children>
+                <Label alignment="CENTER" maxWidth="1.7976931348623157E308"
+                       style="-fx-background-color: red;" text="Prime Prospects"
+                       textFill="WHITE" HBox.hgrow="ALWAYS">
+                    <font>
+                        <Font size="24.0" />
+                    </font>
+                    <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                    </padding>
+                </Label>
+                <Button style="-fx-background-color: red; -fx-border-width: 0;
+                -fx-padding: 0; -fx-text-fill: black; -fx-cursor: hand;" text="Вернуться"
+                        onAction="#backClick">
+                    <HBox.margin>
+                        <Insets right="5.0"/>
+                    </HBox.margin>
+                </Button>
+                <Button style="-fx-background-color: red; -fx-border-width: 0;
+                -fx-padding: 0; -fx-text-fill: black; -fx-cursor: hand;" mnemonicParsing="false" text="Log out"
+                        onAction="#logOutClick">
+                    <HBox.margin >
+                        <Insets  right="5.0" />
+                    </HBox.margin>
+                </Button>
+            </children>
+        </HBox>
+    </top>
+
+
+
+
+    <center>
+        <VBox alignment="CENTER"
+              spacing="20.0">
+            <padding>
+                <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+            </padding>
+            <Label text="Размещение вакансии" style="-fx-font-size: 24px; -fx-font-weight: bold;">
+                <font>
+                    <Font size="24.0" />
+                </font>
+            </Label>
+
+            <GridPane hgap="10.0" vgap="10.0">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="150.0" prefWidth="150.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="300.0" prefWidth="450.0" />
+            </columnConstraints>
+
+            <!-- Position -->
+            <Label text="Название вакансии:" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                <style>
+                    -fx-font-style: italic;
+                    -fx-font-weight: bold;
+                </style>
+            </Label>
+            <TextField fx:id="positionField" GridPane.columnIndex="1" GridPane.rowIndex="0" promptText="Введите название вакансии" />
+
+            <!-- Work Experience Years -->
+            <Label text="Опыт работы (лет):" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                <style>
+                    -fx-font-style: italic;
+                    -fx-font-weight: bold;
+                </style>
+            </Label>
+            <TextField fx:id="workExperienceYearsField" GridPane.columnIndex="1" GridPane.rowIndex="1" promptText="Введите требуемый опыт работы (лет)" />
+
+            <!-- Salary -->
+            <Label text="Зарплата:" GridPane.columnIndex="0" GridPane.rowIndex="2">
+                <style>
+                    -fx-font-style: italic;
+                    -fx-font-weight: bold;
+                </style>
+            </Label>
+            <TextField fx:id="salaryField" GridPane.columnIndex="1" GridPane.rowIndex="2" promptText="Введите предлагаемую зарплату" />
+
+            <!-- Requirements -->
+            <Label text="Требования:" GridPane.columnIndex="0" GridPane.rowIndex="3">
+                <style>
+                    -fx-font-style: italic;
+                    -fx-font-weight: bold;
+                </style>
+            </Label>
+            <TextArea fx:id="requirementsArea" GridPane.columnIndex="1" GridPane.rowIndex="3" promptText="Введите требования к кандидату (макс. 1000 символов)" wrapText="true" prefHeight="100.0"/>
+                <!-- What We Offer -->
+                <Label text="Что мы предлагаем:" GridPane.columnIndex="0" GridPane.rowIndex="4">
+                    <style>
+                        -fx-font-style: italic;
+                        -fx-font-weight: bold;
+                    </style>
+                </Label>
+                <TextArea fx:id="whatWeOfferArea" GridPane.columnIndex="1" GridPane.rowIndex="4" promptText="Опишите, что вы предлагаете сотруднику (макс. 1000 символов)" wrapText="true" prefHeight="100.0" />
+
+                <!-- Additional Skills -->
+                <Label text="Дополнительные навыки:" GridPane.columnIndex="0" GridPane.rowIndex="5">
+                    <style>
+                        -fx-font-style: italic;
+                        -fx-font-weight: bold;
+                    </style>
+                </Label>
+                <TextArea fx:id="additionalSkillsArea" GridPane.columnIndex="1" GridPane.rowIndex="5" promptText="Укажите дополнительные навыки (макс. 500 символов)" wrapText="true" prefHeight="80.0" />
+
+                <!-- Employment Type -->
+                <Label text="Тип занятости:" GridPane.columnIndex="0" GridPane.rowIndex="6">
+                    <style>
+                        -fx-font-style: italic;
+                        -fx-font-weight: bold;
+                    </style>
+                </Label>
+                <ChoiceBox fx:id="employmentTypeChoiceBox" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                    <items>
+                        <FXCollections fx:factory="observableArrayList">
+                            <String fx:value="Трудовой договор" />
+                            <String fx:value="Стажировка" />
+                        </FXCollections>
+                    </items>
+                </ChoiceBox>
+
+                <!-- Schedule -->
+                <Label text="График работы:" GridPane.columnIndex="0" GridPane.rowIndex="7">
+                    <style>
+                        -fx-font-style: italic;
+                        -fx-font-weight: bold;
+                    </style>
+                </Label>
+                <ChoiceBox fx:id="scheduleChoiceBox" GridPane.columnIndex="1" GridPane.rowIndex="7">
+                    <items>
+                        <FXCollections fx:factory="observableArrayList">
+                            <String fx:value="5/2" />
+                            <String fx:value="4/3" />
+                            <String fx:value="2/2" />
+                            <String fx:value="Плавающий" />
+                        </FXCollections>
+                    </items>
+                </ChoiceBox>
+
+                <!-- Working Hours -->
+                <Label text="Количество часов в день:" GridPane.columnIndex="0" GridPane.rowIndex="8">
+                    <style>
+                        -fx-font-style: italic;
+                        -fx-font-weight: bold;
+                    </style>
+                </Label>
+                <TextField fx:id="workingHoursField" GridPane.columnIndex="1" GridPane.rowIndex="8" promptText="Введите количество рабочих часов в день (2-24)" />
+
+                <!-- Address -->
+                <Label text="Адрес:" GridPane.columnIndex="0" GridPane.rowIndex="9">
+                    <style>
+                        -fx-font-style: italic;
+                        -fx-font-weight: bold;
+                    </style>
+                </Label>
+                <TextField fx:id="addressField" GridPane.columnIndex="1" GridPane.rowIndex="9" promptText="Введите адрес офиса" />
+
+            </GridPane>
+            <Button mnemonicParsing="false" style="-fx-background-color: #1E90FF" text="Сохранить"
+                    onAction="#save">
+                <padding>
+                    <Insets bottom="10.0" left="15.0" right="15.0" top="10.0" />
+                </padding>
+            </Button>
+        </VBox>
+    </center>
+
+</BorderPane>

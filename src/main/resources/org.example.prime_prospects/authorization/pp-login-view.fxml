@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="org.example.prime_prospects.contrallers.LoginController">
+    <Button style="-fx-border-width: 0;
+                -fx-padding: 0; -fx-text-fill: black; -fx-cursor: hand;" mnemonicParsing="false" text="Register"
+            onAction="#regClick"><HBox.margin >
+        <Insets  right="5.0" />
+    </HBox.margin></Button>
+
+    <HBox>
+        <children>
+            <Label text="Login:" />
+            <TextField fx:id="usernameField"/>
+        </children>
+    </HBox>
+    <HBox>
+        <children>
+            <Label text="Password:" />
+            <PasswordField fx:id="passwordField"/>
+        </children>
+    </HBox>
+    <Button fx:id="loginButton" onAction="#handleLoginButtonAction" text="Go"/>
+
+</VBox>
+
+

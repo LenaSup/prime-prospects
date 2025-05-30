@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<?import javafx.scene.text.Text?>
+<BorderPane
+        xmlns="http://javafx.com/javafx"
+        xmlns:fx="http://javafx.com/fxml/1"
+        fx:controller="org.example.prime_prospects.contrallers.ResumeController"
+        prefHeight="600.0" prefWidth="600.0">
+
+    <top>
+        <HBox alignment="CENTER_LEFT" BorderPane.alignment="CENTER" style="-fx-background-color: red">
+            <children>
+                <Button style="-fx-background-color: red; -fx-border-width: 0;
+                -fx-padding: 0; -fx-text-fill: white; -fx-cursor: hand;"
+                        onAction="#backClick" text="Вернуться">
+                </Button>
+
+            </children>
+        </HBox>
+    </top>
+<center>
+    <VBox spacing="5.0" fx:id="center">
+        <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+        </padding>
+        <children>
+            <VBox spacing="7.0">
+                <Label fx:id="positionText" text="Position" alignment="CENTER"
+                       style="-fx-font-weight: bold; -fx-font-size: 25px; -fx-font-style: italic">
+                    <font>
+                        <Font size="25.0"/>
+                    </font>
+                </Label>
+            </VBox>
+
+
+            <HBox spacing="2.0">
+                <children>
+                    <Label fx:id="nameText" style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-font-style: italic;"/>
+                    <Label fx:id="contacts" style="-fx-font-size: 15px"/>
+                </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT"
+                  xmlns="http://javafx.com/javafx/21"
+                  xmlns:fx="http://javafx.com/fxml/1">
+                <children>
+
+                    <VBox>
+                        <children>
+                            <Label text="Опыт работы">
+                                <style>
+                                    -fx-font-style: italic;
+                                </style>
+                                <VBox.margin>
+                                    <Insets bottom="2.0" left="5.0" right="5.0" top="5.0" />
+                                </VBox.margin>
+                            </Label>
+                            <Label fx:id="workYears" />
+                            <Label text="Зарплата">
+                                <style>
+                                    -fx-font-style: italic;
+                                </style>
+                                <VBox.margin>
+                                    <Insets bottom="2.0" left="5.0" right="5.0" top="5.0" />
+                                </VBox.margin>
+                            </Label>
+                            <Label fx:id="salaryText"/>
+                            <Label text="Адрес">
+                                <style>
+                                    -fx-font-style: italic;
+                                </style>
+                                <VBox.margin>
+                                    <Insets bottom="2.0" left="5.0" right="5.0" top="5.0" />
+                                </VBox.margin>
+                            </Label>
+                            <Label fx:id="addressText"/>
+                        </children>
+                    </VBox>
+                </children>
+            </HBox>
+
+            <VBox spacing="7.0">
+                <Label text="Навыки:" style="-fx-font-weight: bold;"/>
+                <Text fx:id="skillsText"/>
+
+                <Label text="Доп. навыки:" style="-fx-font-weight: bold;"/>
+                <Text fx:id="additionalSkillsText"/>
+
+                <Label text="О себе:" style="-fx-font-weight: bold;"/>
+                <Text fx:id="aboutMeText"/>
+            </VBox>
+
+
+        </children>
+    </VBox>
+</center>
+</BorderPane>
+
